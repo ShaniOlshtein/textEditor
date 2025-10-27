@@ -1,0 +1,61 @@
+.keyboard {
+  display: inline-block;
+  padding: 15px;
+  background-color: #0a0a0a;
+  border-radius: 12px;
+  box-shadow: 0 0 20px #00ffff50, 0 0 40px #ff00ff50;
+}
+
+.keyboard-row {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 6px;
+}
+
+.key {
+  padding: 14px 18px;
+  margin: 3px;
+  border-radius: 8px;
+  background-color: #111;
+  color: #0ff;
+  font-weight: bold;
+  font-size: 20px;
+  cursor: pointer;
+  user-select: none;
+  text-shadow: 0 0 5px #0ff, 0 0 10px #0ff;
+  box-shadow: 0 0 5px #0ff, 0 0 10px #0ff, 0 0 20px #0ff;
+  transition: all 0.15s ease-in-out;
+}
+
+/* Hover effect: glowing neon shift */
+.key:hover {
+  color: #ff0;
+  text-shadow: 0 0 10px #ff0, 0 0 20px #ff0, 0 0 30px #ff0;
+  box-shadow: 0 0 10px #ff0, 0 0 20px #ff0, 0 0 30px #ff0;
+  transform: translateY(-3px) scale(1.05);
+}
+
+/* Active effect: pressed */
+.key:active {
+  transform: scale(0.95);
+  box-shadow: inset 0 0 10px #0ff, inset 0 0 20px #0ff;
+}
+
+/* Optional: animated gradient background for keys */
+@keyframes neon-glow {
+  0% {
+    box-shadow: 0 0 5px #0ff, 0 0 10px #0ff, 0 0 20px #0ff;
+  }
+
+  50% {
+    box-shadow: 0 0 10px #ff0, 0 0 20px #ff0, 0 0 30px #ff0;
+  }
+
+  100% {
+    box-shadow: 0 0 5px #0ff, 0 0 10px #0ff, 0 0 20px #0ff;
+  }
+}
+
+.key {
+  animation: neon-glow 2s infinite alternate;
+}
